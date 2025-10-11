@@ -8,7 +8,6 @@ local indent = vim.o
 
 -- Config
 require("config.lazy")
-require("config.lsp")
 
 -- Mappings
 require("mappings.genmap")

@@ -58,5 +58,7 @@ vim.o.background = "dark" -- or "light" for light mode
 vim.cmd(csc .. theme )
 
 
-
+-- LSP Config
+require("mason").setup()
+require("lsp")
 
