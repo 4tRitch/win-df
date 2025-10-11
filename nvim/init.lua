@@ -6,15 +6,17 @@ local opt_local = vim.opt_local
 local api = vim.api
 local indent = vim.o
 
-opt.shell = "pwsh"
-opt.shellcmdflag = "-NoExit -Command -"
-
+-- Config
 require("config.lazy")
+require("config.lsp")
+
+-- Mappings
 require("mappings.genmap")
 require("mappings.lspmap")
 require("mappings.treemap")
 require("mappings.telemap")
 require("mappings.buffermap")
+
 
 -- Erease the search history
 opt.shada = ""

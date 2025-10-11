@@ -14,12 +14,23 @@ require("lsp.pws")
 -- require("lsp.go")
 -- require("lsp.clang")
 -- require("lsp.cmake")
--- require("lsp.ts")
+require("lsp.ts")
+require("lsp.html")
+require("lsp.css")
 
 
 -- Start each LSP
 vim.lsp.enable("csharp_ls")
 vim.lsp.enable("powershell_es")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("html")
+vim.lsp.enable("cssls")
+
+
+
+
+
+
 -- lua print(vim.inspect(vim.lsp.get_clients()))
 
 
