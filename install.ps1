@@ -3,6 +3,9 @@
 #
 Write-Host "[---------- Symbolic Directories ----------]"
 
+#
+git clone git@github.com:DotChoco/nvim.git
+
 # Powershell
 $PSD_OLD = Read-Host "Write the current PowerShell Path"
 Remove-Item $PSD_OLD -Force -Recurse
@@ -44,19 +47,12 @@ Write-Host ""
 Write-Host "List: "
 Write-Host "  >> Scoop"
 Write-Host "  >> chocolatey"
-Write-Host "  >> git"
 Write-Host "  >> nodejs"
 Write-Host "  >> nvim"
 Write-Host "  >> eza"
 Write-Host "  >> ripgrep"
 Write-Host "  >> MSYS2"
 
-
-
-$Git = Read-Host "Do you want install git(y/n)?"
-if($Git.ToLower() -eq "y"){
-  winget install --id Git.Git -e --source winget
-}
 
 
 $Scoop = Read-Host "Do you want install scoop(y/n)?"
