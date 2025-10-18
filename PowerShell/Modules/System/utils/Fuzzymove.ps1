@@ -17,7 +17,10 @@ Set-PSReadLineKeyHandler -Key Tab -ScriptBlock {
             --preview-window=right:50% `
 
         if ($result) {
-            [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, "cd $result")
+          $command = ""
+          if ($result.Contains(" ")){ $command = "cd '$result'" }
+          else{ $command = "cd $result" }
+            [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, $command)
             [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
         }
     } else {

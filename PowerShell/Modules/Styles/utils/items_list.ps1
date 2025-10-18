@@ -1,4 +1,4 @@
-function la {
+function ll {
   param([string]$path)
   if($path -eq ""){ $dirs = Get-ChildItem }
   else{ $dirs = Get-ChildItem -Path $path }
@@ -7,6 +7,8 @@ function la {
   $color = $defaultIcon.Color
   $defaultIcon = [pscustomobject]@{ Icon="`u{f0f6}"; Color=$PSStyle.Foreground.FromRgb(163,163,163) }
 
+
+  Write-Host("-----------------")
   foreach ($it in $dirs) {
     if ($it.PSIsContainer) {
       $icon = if ($Host.UI.SupportsVirtualTerminal) { "`u{e5ff}" } # folder icon
@@ -20,9 +22,7 @@ function la {
 
     Write-Host "$color$icon  $($it.Name)"
   }
+
+  Write-Host("-----------------")
 }
 
-function ll {
-  param([string]$path)
-  echo("-----------------") && la $path && echo("-----------------")
-}
