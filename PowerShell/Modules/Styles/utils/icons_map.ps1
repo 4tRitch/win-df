@@ -9,7 +9,6 @@ $iconMap = & {
   $shell= [pscustomobject]@{ Icon="`u{e795}"; Color=$PSStyle.Foreground.FromRgb(77, 201, 77) }
   $excel= [pscustomobject]@{ Icon="`u{f1c3}"; Color=$PSStyle.Foreground.FromRgb(140, 255, 140) }
   $pdf= [pscustomobject]@{ Icon="`u{f1c1}"; Color=$PSStyle.Foreground.FromRgb(255, 80, 80) }
-  $folder= [pscustomobject]@{ Icon="`u{e5ff}"; Color=$PSStyle.Foreground.FromRgb(210,210,210) }
   $giticon= [pscustomobject]@{ Icon="`u{e702}"; Color=$PSStyle.Foreground.FromRgb(245, 0, 0) }
   $jsx= [pscustomobject]@{ Icon="`u{ed0d}"; Color=$PSStyle.Foreground.FromRgb(229, 192, 123) }
   $docx= [pscustomobject]@{ Icon="`u{f1c2}"; Color=$PSStyle.Foreground.FromRgb(107, 164, 255) }
@@ -19,15 +18,24 @@ $iconMap = & {
   $csharp= [pscustomobject]@{ Icon="`u{e7b2}"; Color=$PSStyle.Foreground.FromRgb(162, 131, 242) }
   $cpp= [pscustomobject]@{ Icon="`u{e61d}"; Color=$PSStyle.Foreground.FromRgb(131, 140, 242) }
   $rust= [pscustomobject]@{ Icon="`u{e7a8}"; Color=$PSStyle.Foreground.FromRgb(244, 80, 111) }
+  $folder= [pscustomobject]@{ Icon="`u{e5ff}"; Color=$PSStyle.Foreground.FromRgb(210,210,210) }
+  $defaultIcon = [pscustomobject]@{ Icon="`u{f0f6}"; Color=$PSStyle.Foreground.FromRgb(163,163,163) }
 
   # KeyValues
   @{
+    # default
+    ".default" = $defaultIcon
+
+    # folder
+    ".folder" = $folder
+
     # images
     ".png" = $img
     ".jpg" = $img
     ".jpeg" = $img
     ".webp" = $img
     ".gif" = $img
+    ".ico" = $img
 
     # videos
     ".mkv" = $video

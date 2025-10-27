@@ -3,16 +3,14 @@ function ll {
   if($path -eq ""){ $dirs = Get-ChildItem }
   else{ $dirs = Get-ChildItem -Path $path }
   $supportsVT = $Host.UI.SupportsVirtualTerminal
-  $icon = $defaultIcon.Icon
-  $color = $defaultIcon.Color
-  $defaultIcon = [pscustomobject]@{ Icon="`u{f0f6}"; Color=$PSStyle.Foreground.FromRgb(163,163,163) }
+  $defaultIcon = $iconMap[".default"]
 
 
   Write-Host("-----------------")
   foreach ($it in $dirs) {
     if ($it.PSIsContainer) {
-      $icon = if ($Host.UI.SupportsVirtualTerminal) { "`u{e5ff}" } # folder icon
-      $color = $PSStyle.Foreground.FromRgb(210,210,210)
+      $icon = $iconMap[".folder"].Icon
+      $color = $iconMap[".folder"].Color
     } else {
       $ext = $it.Extension.ToLower()
       $entry = if ($iconMap.ContainsKey($ext)) { $iconMap[$ext] } else { $defaultIcon }
