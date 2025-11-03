@@ -4,7 +4,7 @@ Set-PSReadLineKeyHandler -Key Tab -ScriptBlock {
     $cursor = $null
     [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
 
-    if ($line -match '^\s*cd\s+(.*)$') {
+    if ($line -match '^\s*ff\s+(.*)$') {
         $partial = $matches[1]
 
         $result =  Get-ChildItem -Directory -Recurse -Depth 3 | Select-Object -ExpandProperty FullName | fzf `
