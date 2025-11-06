@@ -21,6 +21,10 @@ $iconMap = & {
   $folder= [pscustomobject]@{ Icon="`u{e5ff}"; Color=$PSStyle.Foreground.FromRgb(210,210,210) }
   $defaultIcon = [pscustomobject]@{ Icon="`u{f0f6}"; Color=$PSStyle.Foreground.FromRgb(163,163,163) }
 
+  $readme= [pscustomobject]@{ Icon = "`u{eda4}"; Color=$PSStyle.Foreground.FromRgb(163,163,163) }
+  $license= [pscustomobject]@{ Icon = "`u{e60a}"; Color=$PSStyle.Foreground.FromRgb(229, 192, 123) }
+
+
   # KeyValues
   @{
     # default
@@ -103,6 +107,7 @@ $iconMap = & {
     # rust
     ".rs" = $rust
     ".toml" = $rust
+    ".lock" = $rust
 
     # csharp
     ".cs" = $csharp
@@ -113,6 +118,9 @@ $iconMap = & {
     ".go" = $golang
     ".mod" = $golang
     ".sum" = $golang
+
+    "readme"   = $readme
+    "license"  = $license
 
   }
 }

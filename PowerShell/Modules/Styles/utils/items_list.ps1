@@ -9,17 +9,34 @@ function ll {
   Write-Host("-----------------")
   foreach ($it in $dirs) {
     if ($it.PSIsContainer) {
-      $icon = $iconMap[".folder"].Icon
-      $color = $iconMap[".folder"].Color
+      # Directorio
+      $entry = $iconMap[".folder"]
     } else {
+      # Archivo
       $ext = $it.Extension.ToLower()
-      $entry = if ($iconMap.ContainsKey($ext)) { $iconMap[$ext] } else { $defaultIcon }
-      $icon  = $supportsVT ? $entry.Icon : ""
-      $color = $entry.Color
+
+      if ([string]::IsNullOrEmpty($ext)) {
+        # Sin extensión (ej. README, LICENSE, Dockerfile, Makefile)
+        $name = $it.Name.ToLower()
+        if ($iconMap.ContainsKey($name)) {
+          $entry = $iconMap[$name]
+        } else {
+          $entry = $defaultIcon
+        }
+      } else {
+        # Con extensión normal (ej. .ps1, .md, etc.)
+        if ($iconMap.ContainsKey($ext)) {
+          $entry = $iconMap[$ext]
+        } else {
+          $entry = $defaultIcon
+        }
+      }
     }
 
-    Write-Host "$color$icon  $($it.Name)"
-  }
+    $icon  = if ($supportsVT) { $entry.Icon } else { "" }
+    $color = $entry.Color
+
+    Write-Host "$color$icon  $($it.Name)"  }
 
   Write-Host("-----------------")
 }
