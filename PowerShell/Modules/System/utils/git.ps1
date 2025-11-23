@@ -1,5 +1,5 @@
 # Git
-## Git add All
+## Git Add
 function gta {
   param([object[]]$files)
   if(!$files){ git add . }
@@ -60,11 +60,30 @@ function gsb{
   git checkout $branch
 }
 
+function git_cmd{
+  Write-Host "gta - Git Add(exmp: 'gta .' or 'gta' or 'gta ./src/main.c' )"
+  Write-Host "gsb - Git Switch Branch(exmp: 'gsb main' or 'gsb alpha')"
+  Write-Host "gtr - Git Restore(exmp: 'gtr .' or 'gtr ./src/main.c' )"
+  Write-Host "gte - Git Exclude(exmp: 'gte ./libs/' or 'gte ./src/main.c' )"
+  Write-Host "gti - Git Include(exmp: 'gti ./libs/' or 'gti ./src/main.c' )"
+  Write-Host "fcm - Fast Commit(exmp: 'fmc 'i: new repo'' or 'fmc' )"
+  Write-Host "gtl - Git Log(exmp: 'gtl' or 'gtl 0' )"
+  Write-Host "gtd - Git Diff(exmp: 'gtd ./src/main.c' )"
+  Write-Host "glb - Git List Branches"
+  Write-Host "gts - Git Status"
+  Write-Host "gtp - Git Push"
+  Write-Host "gtpl - Git Pull"
+  Write-Host "gtcm - Git Commands"
+  Write-Host "gtni - Git Init"
+}
+
 
 ##Line Functions
 function glb { git branch -a } ##Git List Branches
 function gts { git status } ##Git Status
 function gtp { git push } ##Git Push
 function gtpl { git pull } ##Git Pull
+function gtcm { git_cmd } ##Git Commands
+function gtni { git init } ##Git Init
 
 

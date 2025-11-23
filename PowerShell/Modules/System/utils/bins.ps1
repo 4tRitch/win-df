@@ -31,7 +31,7 @@ function spd {
     [Parameter(Mandatory=$true)] # Makes the parameter required
     [string]$spotifyURL
   )
-  python.exe -m spotdl --output "$HOMEDIR/Musica/{artist}-{title}.mp3" $spotifyURL
+  python.exe -m spotdl --output "$HOMEDIR/music/{artist}-{title}.mp3" $spotifyURL
 }
 
 Set-Alias tre tree
