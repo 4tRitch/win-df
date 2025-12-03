@@ -18,6 +18,7 @@ $iconMap = & {
   $csharp= [pscustomobject]@{ Icon="`u{e7b2}"; Color=$PSStyle.Foreground.FromRgb(162, 131, 242) }
   $cpp= [pscustomobject]@{ Icon="`u{e61d}"; Color=$PSStyle.Foreground.FromRgb(131, 140, 242) }
   $rust= [pscustomobject]@{ Icon="`u{e7a8}"; Color=$PSStyle.Foreground.FromRgb(244, 80, 111) }
+  $sql= [pscustomobject]@{ Icon="`u{e76e}"; Color=$PSStyle.Foreground.FromRgb(235, 235, 235) }
   $folder= [pscustomobject]@{ Icon="`u{e5ff}"; Color=$PSStyle.Foreground.FromRgb(210,210,210) }
   $defaultIcon = [pscustomobject]@{ Icon="`u{f0f6}"; Color=$PSStyle.Foreground.FromRgb(163,163,163) }
 
@@ -96,6 +97,7 @@ $iconMap = & {
     ".js" = $jsx
     ".jsx" = $jsx
     ".json" = $jsx
+    ".jsonc" = $jsx
 
     # lua
     ".lua" = $lua
@@ -118,6 +120,10 @@ $iconMap = & {
     ".go" = $golang
     ".mod" = $golang
     ".sum" = $golang
+
+    # sql
+    ".sql" = $sql
+    ".psql" = $sql
 
     "readme"   = $readme
     "license"  = $license
