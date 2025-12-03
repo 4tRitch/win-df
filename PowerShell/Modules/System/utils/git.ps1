@@ -62,6 +62,7 @@ function gsb{
 
 function git_cmd{
   Write-Host "gta - Git Add(exmp: 'gta .' or 'gta' or 'gta ./src/main.c' )"
+  Write-Host "gtm - Git Commit(exmp: 'gtm 'f: struct refactored'' or 'gtm' )"
   Write-Host "gsb - Git Switch Branch(exmp: 'gsb main' or 'gsb alpha')"
   Write-Host "gtr - Git Restore(exmp: 'gtr .' or 'gtr ./src/main.c' )"
   Write-Host "gte - Git Exclude(exmp: 'gte ./libs/' or 'gte ./src/main.c' )"
