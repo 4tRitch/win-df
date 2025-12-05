@@ -49,15 +49,18 @@ function ttn{
   [double]$UPI = ($IEPS * $UPIEPS_SUBSTRACT) / $IEPS_PORCENT
 
 
-  #RESULTS
+  #TRANSFERS & SUBTOTALS
   [double]$TRANSFERS = $UPI + $UPTAX
-  [double]$TOTAL = $UP - $TRANSFERS
+  [double]$SUBTOTAL = $UP - $TRANSFERS
 
-  $RES_TOTAL = scale $TOTAL,$DECIMALS
-  $RES_TRANSFERS = scale $TRANSFERS,$DECIMALS
+  #RESULTS
+  [double]$RES_SUBTOTAL = scale $SUBTOTAL,$DECIMALS
+  [double]$RES_TRANSFERS = scale $TRANSFERS,$DECIMALS
+  [double]$RES_TOTAL = $RES_TRANSFERS + $RES_SUBTOTAL
 
-  Write-Host("Total: " + $RES_TOTAL)
+  Write-Host("SubTotal: " + $RES_SUBTOTAL)
   Write-Host("Traslados: " + $RES_TRANSFERS)
+  Write-Host("Total: " + $RES_TOTAL)
 }
 
 
