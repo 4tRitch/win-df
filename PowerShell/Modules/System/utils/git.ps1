@@ -19,7 +19,7 @@ function gtd {
 function gtm {
   param([string]$comment)
   if($comment -eq ""){ $comment = "f: menor update" }
-  git commit -m $comment
+  gta && git commit -m $comment
 }
 
 
