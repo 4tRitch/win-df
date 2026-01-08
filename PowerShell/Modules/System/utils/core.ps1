@@ -60,6 +60,14 @@ function Copy-ItemForcefully{
   cp $files $destiny -Force -Recurse
 }
 
+function mk {
+  param (
+    [Parameter(Mandatory=$true)] # Makes the parameter required
+    [string]$destiny             # Parameter of type string
+  )
+  New-Item -ItemType Directory -Path $destiny | Out-Null
+}
+
 
 
 
@@ -70,7 +78,6 @@ Set-Alias unzip Expand-Archive
 Set-Alias zip Compress-Archive
 Set-Alias cls clear
 Set-Alias cc clear
-Set-Alias mk mkdir
 Set-Alias xx ex
 Set-Alias fr Remove-ItemForcefully
 Set-Alias ffc Copy-ItemForcefully

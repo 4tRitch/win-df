@@ -16,7 +16,8 @@ $iconMap = & {
   $lua= [pscustomobject]@{ Icon="`u{e620}"; Color=$PSStyle.Foreground.FromRgb(110, 119, 250) }
   $golang= [pscustomobject]@{ Icon="`u{e627}"; Color=$PSStyle.Foreground.FromRgb(110, 191, 252) }
   $csharp= [pscustomobject]@{ Icon="`u{e7b2}"; Color=$PSStyle.Foreground.FromRgb(162, 131, 242) }
-  $cpp= [pscustomobject]@{ Icon="`u{e61d}"; Color=$PSStyle.Foreground.FromRgb(131, 140, 242) }
+  $c= [pscustomobject]@{ Icon="`u{e61e}"; Color=$PSStyle.Foreground.FromRgb(131, 140, 242) }
+  $cmake= [pscustomobject]@{ Icon="`u{e673}"; Color=$PSStyle.Foreground.FromRgb(131, 140, 242) }
   $rust= [pscustomobject]@{ Icon="`u{e7a8}"; Color=$PSStyle.Foreground.FromRgb(244, 80, 111) }
   $sql= [pscustomobject]@{ Icon="`u{e76e}"; Color=$PSStyle.Foreground.FromRgb(235, 235, 235) }
   $folder= [pscustomobject]@{ Icon="`u{e5ff}"; Color=$PSStyle.Foreground.FromRgb(210,210,210) }
@@ -92,6 +93,7 @@ $iconMap = & {
     # git
     ".gitignore" = $giticon
     ".gitattributes" = $giticon
+    ".git" = $giticon
 
     # javascript
     ".js" = $jsx
@@ -103,8 +105,12 @@ $iconMap = & {
     ".lua" = $lua
 
     # cpp
-    ".cpp" = $cpp
-    ".h" = $cpp
+    ".cmakelists"  = $cmake
+    ".c" = $c
+    ".clangd" = $c
+    ".cpp" = $c
+    ".h" = $c
+
 
     # rust
     ".rs" = $rust

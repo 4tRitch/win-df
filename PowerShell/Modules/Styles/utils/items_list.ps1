@@ -1,34 +1,41 @@
 function ll {
   param([string]$path)
-  if($path -eq ""){ $dirs = Get-ChildItem }
-  else{ $dirs = Get-ChildItem -Path $path }
+  if($path -eq ""){ $dirs = Get-ChildItem -Force }
+  else{ $dirs = Get-ChildItem -Path $path -Force }
   $supportsVT = $Host.UI.SupportsVirtualTerminal
   $defaultIcon = $iconMap[".default"]
 
 
   Write-Host("-----------------")
   foreach ($it in $dirs) {
-    if ($it.PSIsContainer) {
-      # Directorio
-      $entry = $iconMap[".folder"]
-    } else {
-      # Archivo
+    # Directorio
+    if ($it.PSIsContainer) { $entry = $iconMap[".folder"] }
+
+    # Archivo
+    else {
       $ext = $it.Extension.ToLower()
 
+      # Without extention (ej. README, LICENSE, ETC )
       if ([string]::IsNullOrEmpty($ext)) {
-        # Sin extensión (ej. README, LICENSE, Dockerfile, Makefile)
         $name = $it.Name.ToLower()
         if ($iconMap.ContainsKey($name)) {
           $entry = $iconMap[$name]
         } else {
           $entry = $defaultIcon
         }
-      } else {
-        # Con extensión normal (ej. .ps1, .md, etc.)
-        if ($iconMap.ContainsKey($ext)) {
-          $entry = $iconMap[$ext]
-        } else {
-          $entry = $defaultIcon
+      }
+
+      # With extention (ej. .ps1, .md, etc.)
+      else {
+        if($it.Name -eq "CMakeLists.txt"){
+          $entry = $iconMap[".cmakelists"]
+        }
+        else{
+          if ($iconMap.ContainsKey($ext)) {
+            $entry = $iconMap[$ext]
+          } else {
+            $entry = $defaultIcon
+          }
         }
       }
     }
