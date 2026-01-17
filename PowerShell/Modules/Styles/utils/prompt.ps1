@@ -25,6 +25,7 @@ function global:prompt {
 
       if (-not $status) { return "$cwd $timeSym $arrow" }
 
+
       $branchLine = $status | Select-Object -First 1
       $symbols = ""
       $branch = ""
