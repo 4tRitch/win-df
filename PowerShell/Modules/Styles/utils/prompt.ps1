@@ -18,13 +18,12 @@ function global:prompt {
 
   if (Get-Command git -ErrorAction SilentlyContinue) {
     try {
+      $status = git status --porcelain --branch 2>$null
+      if (-not $status) { return "$cwd $timeSym $arrow" }
+
       # Colors
       $gitColor = $PSStyle.Foreground.FromRgb(204,111,130)
       $resetColor = "$([char]27)[0m"
-      $status = git status --porcelain --branch 2>$null
-
-      if (-not $status) { return "$cwd $timeSym $arrow" }
-
 
       $branchLine = $status | Select-Object -First 1
       $symbols = ""
