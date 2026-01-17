@@ -60,21 +60,24 @@ function Copy-ItemForcefully{
   cp $files $destiny -Force -Recurse
 }
 
-function mk {
+
+### Copy recursive an item forcefully
+function mk{
   param (
     [Parameter(Mandatory=$true)] # Makes the parameter required
-    [string]$destiny             # Parameter of type string
+    [object[]]$Files,             # Parameter of type string
+    [string]$Destiny             # Parameter of type string
   )
-  New-Item -ItemType Directory -Path $destiny | Out-Null
+  if($Destiny -eq ""){ $Destiny = Get-Location }
+  mkdir $Files | Out-Null
 }
-
-
 
 
 
 
 # Alias
 Set-Alias unzip Expand-Archive
+# Set-Alias mk mkdir
 Set-Alias zip Compress-Archive
 Set-Alias cls clear
 Set-Alias cc clear

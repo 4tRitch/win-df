@@ -6,13 +6,15 @@ $iconMap = & {
   $audio= [pscustomobject]@{ Icon="`u{f001}"; Color=$PSStyle.Foreground.FromRgb(178,168, 255) }
   $zip= [pscustomobject]@{ Icon="`u{f410}"; Color=$PSStyle.Foreground.FromRgb(239, 234, 95) }
   $md= [pscustomobject]@{ Icon="`u{039B}"; Color=$PSStyle.Foreground.FromRgb(255, 255, 255) }
-  $shell= [pscustomobject]@{ Icon="`u{e795}"; Color=$PSStyle.Foreground.FromRgb(77, 201, 77) }
+  $shell= [pscustomobject]@{ Icon="`u{e691}"; Color=$PSStyle.Foreground.FromRgb(77, 201, 77) }
+  $pws= [pscustomobject]@{ Icon="`u{e86c}"; Color=$PSStyle.Foreground.FromRgb(110, 191, 252) }
+  $bat= [pscustomobject]@{ Icon="`u{f489}"; Color=$PSStyle.Foreground.FromRgb(110, 191, 252) }
   $excel= [pscustomobject]@{ Icon="`u{f1c3}"; Color=$PSStyle.Foreground.FromRgb(140, 255, 140) }
   $pdf= [pscustomobject]@{ Icon="`u{f1c1}"; Color=$PSStyle.Foreground.FromRgb(255, 80, 80) }
   $giticon= [pscustomobject]@{ Icon="`u{e702}"; Color=$PSStyle.Foreground.FromRgb(245, 0, 0) }
   $jsx= [pscustomobject]@{ Icon="`u{ed0d}"; Color=$PSStyle.Foreground.FromRgb(229, 192, 123) }
   $docx= [pscustomobject]@{ Icon="`u{f1c2}"; Color=$PSStyle.Foreground.FromRgb(107, 164, 255) }
-  $bins= [pscustomobject]@{ Icon="`u{f471}"; Color=$PSStyle.Foreground.FromRgb(255, 70, 135) }
+  $bins= [pscustomobject]@{ Icon="`u{e70f}"; Color=$PSStyle.Foreground.FromRgb(255, 70, 135) }
   $lua= [pscustomobject]@{ Icon="`u{e620}"; Color=$PSStyle.Foreground.FromRgb(110, 119, 250) }
   $golang= [pscustomobject]@{ Icon="`u{e627}"; Color=$PSStyle.Foreground.FromRgb(110, 191, 252) }
   $csharp= [pscustomobject]@{ Icon="`u{e7b2}"; Color=$PSStyle.Foreground.FromRgb(162, 131, 242) }
@@ -83,8 +85,8 @@ $iconMap = & {
     ".csv" = $excel
 
     # shell/script
-    ".ps1" = $shell
-    ".bat" = $shell
+    ".ps1" = $pws
+    ".bat" = $bat
     ".sh" = $shell
 
     # markdown
