@@ -10,7 +10,7 @@ function global:prompt {
   $timeSym = "at $time"
 
   # # Symbols
-  # $arrow = "> "
+  $arrow = "$ "
 
 
   # Git info
