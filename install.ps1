@@ -3,7 +3,7 @@
 #
 Write-Host "[---------- Symbolic Directories ----------]"
 
-#
+# Add git repo
 git clone git@github.com:DotChoco/nvim.git
 
 # Powershell
@@ -45,14 +45,13 @@ Write-Host "[---------- Dependencies ----------]"
 Write-Host ""
 
 Write-Host "List: "
-Write-Host "  >> Scoop"
-Write-Host "  >> chocolatey"
-Write-Host "  >> nodejs"
-Write-Host "  >> nvim"
-Write-Host "  >> eza"
-Write-Host "  >> ripgrep"
-Write-Host "  >> MSYS2"
-
+Write-Host "`tScoop"
+Write-Host "`tchocolatey"
+Write-Host "`tnodejs"
+Write-Host "`tnvim"
+Write-Host "`teza"
+Write-Host "`tripgrep"
+Write-Host "`tMSYS2"
 
 
 $Scoop = Read-Host "Do you want install scoop(y/n)?"
