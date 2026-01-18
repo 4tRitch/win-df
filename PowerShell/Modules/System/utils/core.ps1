@@ -1,4 +1,6 @@
-# Functions
+#Suggestions
+Set-PSReadlineOption -PredictionViewStyle ListView
+
 ## Dirs
 function jj { cd "$HOMEDIR"} # home dir
 function gg { cd $DEVDIR } # dev dir
