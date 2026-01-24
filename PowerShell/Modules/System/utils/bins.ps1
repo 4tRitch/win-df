@@ -34,6 +34,15 @@ function spd {
   python.exe -m spotdl --output "$HOMEDIR/music/{artist}-{title}.mp3" $spotifyURL
 }
 
+function co {
+  param (
+    [string]$path
+  )
+  if($path -eq ""){ $path = Get-Location }
+  code $path
+}
+
+Set-Alias cdx codex
 Set-Alias tre tree
 Set-Alias ob obsidian
 Set-Alias g git
